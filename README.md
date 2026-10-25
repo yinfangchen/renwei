@@ -19,7 +19,17 @@
 
 ## 安装
 
-### Claude Code
+### 让 agent 帮你装
+
+把下面这段话发给 Claude Code 或其他编程 agent：
+
+```
+帮我安装 renwei skill：把 https://github.com/yinfangchen/renwei 克隆到你的 skills 目录（Claude Code 是 ~/.claude/skills/renwei）。如果没有 skills 目录，就克隆到任意位置，以后改中文文字前先读它的 SKILL.md。
+```
+
+装好后在新会话里说「帮我去去 AI 味」就行。
+
+### 手动安装（Claude Code）
 
 ```bash
 git clone https://github.com/yinfangchen/renwei.git ~/renwei && ln -s ~/renwei ~/.claude/skills/renwei
