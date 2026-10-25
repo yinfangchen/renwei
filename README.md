@@ -67,7 +67,7 @@ renwei 写给人类读者看，不针对 AIGC 检测器，也不承诺检测分�
 ### Claude Code
 
 ```bash
-git clone https://github.com/darknesschen1997/renwei.git ~/renwei && ln -s ~/renwei ~/.claude/skills/renwei
+git clone https://github.com/yinfangchen/renwei.git ~/renwei && ln -s ~/renwei ~/.claude/skills/renwei
 ```
 
 或者直接把整个目录拷进 `~/.claude/skills/`。新会话里说「帮我去去 AI 味」，或直接 `/renwei`。
