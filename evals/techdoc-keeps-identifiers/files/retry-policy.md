@@ -1,0 +1,1 @@
+`RetryPolicy` 是一个用于控制 HTTP 请求重试行为的配置类，它能够帮助开发者有效地提升服务在网络抖动场景下的稳定性。值得注意的是，`max_retries` 的默认值为 3，设置为 0 时将完全禁用重试。在实际使用中，建议将 `backoff_factor` 与 `jitter=True` 搭配使用，以避免大量 client 在同一时刻发起重试，从而引发 thundering herd 问题。需要注意的是，对于非幂等请求（例如 POST），SDK 默认不会进行重试——如果你确实需要重试这类请求，必须显式地将其加入 `retry_on_methods`，并自行确保服务端具备幂等处理能力。此外，该策略仅对 5xx 响应和 `ConnectionError` 生效，4xx 响应会直接抛出 `HTTPError`。

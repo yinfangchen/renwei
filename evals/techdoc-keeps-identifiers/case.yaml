@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: techdoc-keeps-identifiers
+expected_outcome: |
+  SDK 文档段落，属于正式书面场景（技术文档）。所有反引号里的标识符（RetryPolicy、max_retries、backoff_factor、
+  jitter=True、retry_on_methods、ConnectionError、HTTPError）连同反引号逐字保留。API 参考的惯例是第一句先说这是什么，
+  所以第一句仍以 RetryPolicy 开头，说明它是控制 HTTP 请求重试行为的配置类，不改成从使用场景切入。默认值、禁用条件、
+  非幂等请求的限制、仅对 5xx 和 ConnectionError 生效这些事实，和「默认」「必须」「仅」这类范围词不变；client、
+  thundering herd 等文档选用的英文术语不翻译。可以删的是「值得注意的是」「需要注意的是」「有效地」这类垫料，
+  「进行重试」「对于……」改直说，破折号拆开；重要的限制可以写成「注意：」提示。语体保持中性书面，不口语化，
+  不新增「这点最容易踩坑」之类原文没有依据的说法。
+context:
+  scaffold_script: place-files.sh
